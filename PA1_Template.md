@@ -45,7 +45,7 @@ median(dailytotal$sumsteps)
 ```
 ## [1] 10765
 ```
-### The mean total number of steps per day is 1.0766 &times; 10<sup>4</sup> and the median is 10765. 
+### The mean total number of steps per day is 10766 and the median is 10765. 
 
 ## What is the average daily activity pattern?
 
@@ -134,8 +134,8 @@ median(dailytotcmplt$sumsteps)
 ```
 ## [1] 10766
 ```
-### The mean total number of steps per day is 1.0766 &times; 10<sup>4</sup> and the median is 1.0766 &times; 10<sup>4</sup>. 
-The strategy to fill in the NA values of 'steps' with the mean value for the corresponding 5 minute interval has had no impact on the mean of total number of steps taken per day (since the original mean value was used to fill in the NA values) and negligable impact on the median, increasing it from 10765 to 1.0766 &times; 10<sup>4</sup>. 
+### The mean total number of steps per day is 10766 and the median is 10766. 
+### The strategy to fill in the NA values of 'steps' with the mean value for the corresponding 5 minute interval has had no impact on the mean of total number of steps taken per day (since the original mean value was used to fill in the NA values) and negligable impact on the median, increasing it from 10765 to 10766. 
 
 
 ## Are there differences in activity patterns between weekdays and weekends?

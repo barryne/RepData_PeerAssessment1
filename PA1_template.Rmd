@@ -28,7 +28,7 @@ hist(dailytotal$sumsteps, main = "Total Number of Steps per Day", xlab = "steps 
 mean(dailytotal$sumsteps)
 median(dailytotal$sumsteps)
 ```
-### The mean total number of steps per day is `r mean(dailytotal$sumsteps)` and the median is `r median(dailytotal$sumsteps)`. 
+### The mean total number of steps per day is `r as.character(floor(mean(dailytotal$sumsteps)))` and the median is `r median(dailytotal$sumsteps)`. 
 
 ## What is the average daily activity pattern?
 
@@ -84,8 +84,8 @@ hist(dailytotcmplt$sumsteps, main = "Total Number of Steps per Day", xlab = "ste
 mean(dailytotcmplt$sumsteps)
 median(dailytotcmplt$sumsteps)
 ```
-### The mean total number of steps per day is `r mean(dailytotcmplt$sumsteps)` and the median is `r median(dailytotcmplt$sumsteps)`. 
-The strategy to fill in the NA values of 'steps' with the mean value for the corresponding 5 minute interval has had no impact on the mean of total number of steps taken per day (since the original mean value was used to fill in the NA values) and negligable impact on the median, increasing it from `r median(dailytotal$sumsteps)` to `r median(dailytotcmplt$sumsteps)`. 
+### The mean total number of steps per day is `r format(mean(dailytotcmplt$sumsteps), scientific = FALSE)` and the median is `r as.character(floor(median(dailytotcmplt$sumsteps)))`. 
+### The strategy to fill in the NA values of 'steps' with the mean value for the corresponding 5 minute interval has had no impact on the mean of total number of steps taken per day (since the original mean value was used to fill in the NA values) and negligable impact on the median, increasing it from `r format(median(dailytotal$sumsteps), scientific = FALSE)` to `r as.character(floor(median(dailytotcmplt$sumsteps)))`. 
 
 
 ## Are there differences in activity patterns between weekdays and weekends?

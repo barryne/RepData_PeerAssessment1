@@ -220,7 +220,7 @@ mean(dailytotal$sumsteps)
 <pre><code>## [1] 10765
 </code></pre>
 
-<h3>The mean total number of steps per day is 1.0766 &times; 10<sup>4</sup> and the median is 10765.</h3>
+<h3>The mean total number of steps per day is 10766 and the median is 10765.</h3>
 
 <h2>What is the average daily activity pattern?</h2>
 
@@ -295,9 +295,9 @@ hist(dailytotcmplt$sumsteps, main = &quot;Total Number of Steps per Day&quot;, x
 <pre><code>## [1] 10766
 </code></pre>
 
-<h3>The mean total number of steps per day is 1.0766 &times; 10<sup>4</sup> and the median is 1.0766 &times; 10<sup>4</sup>.</h3>
+<h3>The mean total number of steps per day is 10766 and the median is 10766.</h3>
 
-<p>The strategy to fill in the NA values of &#39;steps&#39; with the mean value for the corresponding 5 minute interval has had no impact on the mean of total number of steps taken per day (since the original mean value was used to fill in the NA values) and negligable impact on the median, increasing it from 10765 to 1.0766 &times; 10<sup>4</sup>. </p>
+<h3>The strategy to fill in the NA values of &#39;steps&#39; with the mean value for the corresponding 5 minute interval has had no impact on the mean of total number of steps taken per day (since the original mean value was used to fill in the NA values) and negligable impact on the median, increasing it from 10765 to 10766.</h3>
 
 <h2>Are there differences in activity patterns between weekdays and weekends?</h2>
 
@@ -317,7 +317,7 @@ xyplot(steps~interval|factor(daytype),data=intervalwkavgcmplt,aspect=1/2,type=&q
 <pre><code class="r">unlink(temp)
 </code></pre>
 
-<h3>The weekday and weekend activity pattern does differ. During the morning there are many more steps being taken on weekdays as compared with weekends. Both weekday and weekend have their peak in early morning, around 8.30-9am, however the comparison holds with the weekday peak being higher than the weekend peak as shown on the plot. The trend is then reversed during weekday working hours when the activity levels are lower than those of weekend days.</h3>
+<h3>The weekday and weekend activity pattern does differ. During the morning there are  more steps being taken on weekdays. Both weekday and weekend have their peak in early morning, around 8.30-9am, however the comparison holds with the weekday peak being higher than the weekend peak. The trend is then reversed during weekday business hours, when the activity levels are lower than those of weekend days.</h3>
 
 </body>
 
