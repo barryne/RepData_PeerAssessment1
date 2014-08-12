@@ -3,9 +3,9 @@ Reproducible Research
 Peer Assessment 1
 ========================================================
 
-### The purpose of this assignment is to analyse data collected from a personal activity monitor device. The data consists of two months of data from an anonymous individual collected during the months of October and November, 2012 and include the number of steps taken in 5 minute intervals each day.
+#### The purpose of this assignment is to analyse data collected from a personal activity monitor device. The data consists of two months of data from an anonymous individual collected during the months of October and November, 2012 and include the number of steps taken in 5 minute intervals each day.
 
-## Firstly, load and process the data.
+### Firstly, load and process the data.
 
 
 ```r
@@ -18,7 +18,7 @@ activitydf <- read.csv("activity.csv")
 activityNNA <- na.omit(activitydf)
 ```
 
-## What is the mean total number of steps taken per day?
+### What is the mean total number of steps taken per day?
 
 ```r
 library(plyr)
@@ -45,9 +45,9 @@ median(dailytotal$sumsteps)
 ```
 ## [1] 10765
 ```
-### The mean total number of steps per day is 10766 and the median is 10765. 
+#### The mean total number of steps per day is 10766 and the median is 10765. 
 
-## What is the average daily activity pattern?
+### What is the average daily activity pattern?
 
 
 ```r
@@ -69,10 +69,10 @@ print(maxint)
 ## [1] 835
 ```
 
-### The 5 minute interval that contains the maximum number of steps is 835
+#### The 5 minute interval that contains the maximum number of steps is 835
 
 
-## Imputing missing values
+### Imputing missing values
 
 
 ```r
@@ -84,7 +84,7 @@ sum(!ok)
 ```
 ## [1] 2304
 ```
-### The total number of missing values in the original dataset is 2304
+#### The total number of missing values in the original dataset is 2304
 
 
 ```r
@@ -108,7 +108,7 @@ sum(!ok)
 ```
 ## [1] 0
 ```
-### The total number of missing values in the new dataset is 0
+#### The total number of missing values in the new dataset is 0
 
 
 ```r
@@ -134,11 +134,11 @@ median(dailytotcmplt$sumsteps)
 ```
 ## [1] 10766
 ```
-### The mean total number of steps per day is 10766 and the median is 10766. 
-### The strategy to fill in the NA values of 'steps' with the mean value for the corresponding 5 minute interval has had no impact on the mean of total number of steps taken per day (since the original mean value was used to fill in the NA values) and negligable impact on the median, increasing it from 10765 to 10766. 
+#### The mean total number of steps per day is 10766 and the median is 10766. 
+#### The strategy to fill in the NA values of 'steps' with the mean value for the corresponding 5 minute interval has had no impact on the mean of total number of steps taken per day (since the original mean value was used to fill in the NA values) and negligable impact on the median, increasing it from 10765 to 10766. 
 
 
-## Are there differences in activity patterns between weekdays and weekends?
+### Are there differences in activity patterns between weekdays and weekends?
 
 
 ```r
@@ -158,4 +158,4 @@ xyplot(steps~interval|factor(daytype),data=intervalwkavgcmplt,aspect=1/2,type="l
 ```r
 unlink(temp)
 ```
-### The weekday and weekend activity pattern does differ. During the morning there are  more steps being taken on weekdays. Both weekday and weekend have their peak in early morning, around 8.30-9am, however the comparison holds with the weekday peak being higher than the weekend peak. The trend is then reversed during weekday business hours, when the activity levels are lower than those of weekend days.
+#### The weekday and weekend activity pattern does differ. During the morning there are  more steps being taken on weekdays. Both weekday and weekend have their peak in early morning, around 8.30-9am, however the comparison holds with the weekday peak being higher than the weekend peak. The trend is then reversed during weekday business hours, when the activity levels are lower than those of weekend days.

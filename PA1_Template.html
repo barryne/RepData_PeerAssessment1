@@ -184,9 +184,9 @@ Reproducible Research</p>
 
 <h1>Peer Assessment 1</h1>
 
-<h3>The purpose of this assignment is to analyse data collected from a personal activity monitor device. The data consists of two months of data from an anonymous individual collected during the months of October and November, 2012 and include the number of steps taken in 5 minute intervals each day.</h3>
+<h4>The purpose of this assignment is to analyse data collected from a personal activity monitor device. The data consists of two months of data from an anonymous individual collected during the months of October and November, 2012 and include the number of steps taken in 5 minute intervals each day.</h4>
 
-<h2>Firstly, load and process the data.</h2>
+<h3>Firstly, load and process the data.</h3>
 
 <pre><code class="r">fileURL &lt;- &quot;https://github.com/barryne/RepData_PeerAssessment1/blob/master/activity.zip?raw=true&quot;
 temp &lt;- tempfile()
@@ -197,7 +197,7 @@ activitydf &lt;- read.csv(&quot;activity.csv&quot;)
 activityNNA &lt;- na.omit(activitydf)
 </code></pre>
 
-<h2>What is the mean total number of steps taken per day?</h2>
+<h3>What is the mean total number of steps taken per day?</h3>
 
 <pre><code class="r">library(plyr)
 # Make a histogram of the total number of steps taken each day
@@ -220,9 +220,9 @@ mean(dailytotal$sumsteps)
 <pre><code>## [1] 10765
 </code></pre>
 
-<h3>The mean total number of steps per day is 10766 and the median is 10765.</h3>
+<h4>The mean total number of steps per day is 10766 and the median is 10765.</h4>
 
-<h2>What is the average daily activity pattern?</h2>
+<h3>What is the average daily activity pattern?</h3>
 
 <pre><code class="r"># Make a time series plot of the 5-minute interval and the average number of steps taken, averaged across all days
 intervalwkavg &lt;- ddply(activityNNA, .(interval), summarise, avgsteps = mean(steps))
@@ -240,9 +240,9 @@ print(maxint)
 <pre><code>## [1] 835
 </code></pre>
 
-<h3>The 5 minute interval that contains the maximum number of steps is 835</h3>
+<h4>The 5 minute interval that contains the maximum number of steps is 835</h4>
 
-<h2>Imputing missing values</h2>
+<h3>Imputing missing values</h3>
 
 <pre><code class="r"># 1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
 ok &lt;- complete.cases(activitydf)
@@ -252,7 +252,7 @@ sum(!ok)
 <pre><code>## [1] 2304
 </code></pre>
 
-<h3>The total number of missing values in the original dataset is 2304</h3>
+<h4>The total number of missing values in the original dataset is 2304</h4>
 
 <pre><code class="r"># 2. The missing values will be filled in using the mean for that 5-minute interval
 intervalfill &lt;- function(interval){
@@ -274,7 +274,7 @@ sum(!ok)
 <pre><code>## [1] 0
 </code></pre>
 
-<h3>The total number of missing values in the new dataset is 0</h3>
+<h4>The total number of missing values in the new dataset is 0</h4>
 
 <pre><code class="r"># 4. Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. 
 dailytotcmplt &lt;- ddply(activitycomplt, .(date), summarise, sumsteps = sum(steps))
@@ -295,11 +295,11 @@ hist(dailytotcmplt$sumsteps, main = &quot;Total Number of Steps per Day&quot;, x
 <pre><code>## [1] 10766
 </code></pre>
 
-<h3>The mean total number of steps per day is 10766 and the median is 10766.</h3>
+<h4>The mean total number of steps per day is 10766 and the median is 10766.</h4>
 
-<h3>The strategy to fill in the NA values of &#39;steps&#39; with the mean value for the corresponding 5 minute interval has had no impact on the mean of total number of steps taken per day (since the original mean value was used to fill in the NA values) and negligable impact on the median, increasing it from 10765 to 10766.</h3>
+<h4>The strategy to fill in the NA values of &#39;steps&#39; with the mean value for the corresponding 5 minute interval has had no impact on the mean of total number of steps taken per day (since the original mean value was used to fill in the NA values) and negligable impact on the median, increasing it from 10765 to 10766.</h4>
 
-<h2>Are there differences in activity patterns between weekdays and weekends?</h2>
+<h3>Are there differences in activity patterns between weekdays and weekends?</h3>
 
 <pre><code class="r"># 1. Create a new factor variable in the dataset with two levels – “weekday” and “weekend” 
 activitycomplt$date &lt;- as.Date(activitycomplt$date)
@@ -317,7 +317,7 @@ xyplot(steps~interval|factor(daytype),data=intervalwkavgcmplt,aspect=1/2,type=&q
 <pre><code class="r">unlink(temp)
 </code></pre>
 
-<h3>The weekday and weekend activity pattern does differ. During the morning there are  more steps being taken on weekdays. Both weekday and weekend have their peak in early morning, around 8.30-9am, however the comparison holds with the weekday peak being higher than the weekend peak. The trend is then reversed during weekday business hours, when the activity levels are lower than those of weekend days.</h3>
+<h4>The weekday and weekend activity pattern does differ. During the morning there are  more steps being taken on weekdays. Both weekday and weekend have their peak in early morning, around 8.30-9am, however the comparison holds with the weekday peak being higher than the weekend peak. The trend is then reversed during weekday business hours, when the activity levels are lower than those of weekend days.</h4>
 
 </body>
 
