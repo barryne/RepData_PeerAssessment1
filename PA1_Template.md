@@ -1,5 +1,5 @@
 Coursera and Johns Hopkins Bloomberg School of Public Health:
-Reproducible Research
+Reproducible Research Course
 Peer Assessment 1
 ========================================================
 
